@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, MapPin, Github, ExternalLink, Menu, X, Code, Briefcase, GraduationCap, Award, User, Download, Globe, ArrowRight, Star, Zap, Target, Rocket } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Menu, X, Code, Briefcase, GraduationCap, Award, User, Globe, ArrowRight, Star, Zap, Target, Rocket } from 'lucide-react';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',

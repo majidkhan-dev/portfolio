@@ -387,8 +387,8 @@ const Portfolio = () => {
                    </div>
                    <div className="flex items-center space-x-4 group hover:bg-blue-50 p-3 rounded-lg transition-all duration-300">
                      <Github className="text-gray-600 group-hover:scale-110 transition-transform" size={18} />
-                     <a href="https://github.com/Majid-1273" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">
-                       github.com/Majid-1273
+                     <a href="https://github.com/majidkhan-dev" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">
+                       github.com/majidkhan-dev
                      </a>
                    </div>
                  </div>
@@ -552,8 +552,8 @@ const Portfolio = () => {
                    <div className="p-3 bg-gradient-to-r from-gray-500/20 to-white/20 rounded-lg group-hover:scale-110 transition-transform">
                      <Github className="text-gray-600" size={20} />
                    </div>
-                   <a href="https://github.com/Majid-1273" target="_blank" rel="noopener noreferrer" className="text-gray-800 text-lg hover:text-blue-500 transition-colors">
-                     github.com/Majid-1273
+                   <a href="https://github.com/majidkhan-dev" target="_blank" rel="noopener noreferrer" className="text-gray-800 text-lg hover:text-blue-500 transition-colors">
+                     github.com/majidkhan-dev
                    </a>
                  </div>
                </div>

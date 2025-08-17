@@ -4,11 +4,6 @@ import { Mail, Phone, MapPin, Github, Menu, X, Code, Briefcase, GraduationCap, A
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    subject: '',
-    message: ''
-  });
 
   // Create refs for each section
   const homeRef = useRef(null);
@@ -16,7 +11,6 @@ const Portfolio = () => {
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
-  const contactRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -25,29 +19,6 @@ const Portfolio = () => {
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
-  };
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Create the email content with the user's name at the end
-    const emailBody = `${formData.message}\n\nBest regards,\n${formData.name}`;
-    
-    // Create Gmail URL with pre-filled information
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=khanmajid.dev@gmail.com&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open Gmail in a new tab
-    window.open(gmailUrl, '_blank');
-    
-    // Reset form
-    setFormData({ name: '', subject: '', message: '' });
   };
 
   const workExperience = [
@@ -186,14 +157,6 @@ const Portfolio = () => {
                  <span>Skills</span>
                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                </button>
-               <button
-                 onClick={() => scrollToSection(contactRef)}
-                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:scale-105 flex items-center space-x-2 group"
-               >
-                 <Mail className="w-4 h-4" />
-                 <span>Contact</span>
-                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-               </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -247,26 +210,16 @@ const Portfolio = () => {
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </button>
-              <button
-                onClick={() => scrollToSection(skillsRef)}
-                className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
-              >
-                <div className="flex items-center space-x-3">
-                  <Award size={16} />
-                  <span>Skills</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </button>
-              <button
-                onClick={() => scrollToSection(contactRef)}
-                className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
-              >
-                <div className="flex items-center space-x-3">
-                  <Mail size={16} />
-                  <span>Contact</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </button>
+                             <button
+                 onClick={() => scrollToSection(skillsRef)}
+                 className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
+               >
+                 <div className="flex items-center space-x-3">
+                   <Award size={16} />
+                   <span>Skills</span>
+                   <ArrowRight className="w-4 h-4" />
+                 </div>
+               </button>
             </div>
           )}
         </nav>
@@ -295,19 +248,12 @@ const Portfolio = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button
-                onClick={() => scrollToSection(aboutRef)}
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-5 rounded-full font-semibold hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3 animate-glow magnetic"
-              >
-                <span>Learn More</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </button>
                              <button
-                 onClick={() => scrollToSection(contactRef)}
-                 className="group border border-blue-300 text-gray-700 px-10 py-5 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-3 magnetic"
+                 onClick={() => scrollToSection(aboutRef)}
+                 className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-5 rounded-full font-semibold hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3 animate-glow magnetic"
                >
-                 <span>Get In Touch</span>
-                 <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                 <span>Learn More</span>
+                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                </button>
             </div>
           </div>
@@ -512,9 +458,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      
 
              {/* Footer */}
        <footer className="bg-white/80 backdrop-blur-md border-t border-blue-200/50 py-12">
